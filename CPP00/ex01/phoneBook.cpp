@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   phoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:57:20 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/09 14:44:07 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/08/12 16:34:22 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phoneBook.hpp"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 PhoneBook::PhoneBook() {
 	_contactCount = 0;
@@ -64,6 +65,6 @@ void	PhoneBook::searchContact() const
     
     // Clear the input buffer before the next prompt
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	    _contacts[index - 1].displayContactDetails();
+	_contacts[index - 1].displayContactDetails();
 
 }
