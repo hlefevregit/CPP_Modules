@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:32:13 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/09 16:15:18 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/08/12 13:13:56 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Account::Account( int initial_depsosit)
 	this->_nbWithdrawals = 0;
 	
 	_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex << ";amount:" << initial_depsosit;
+	std::cout << "index:" << this->_accountIndex << ";amount:" << initial_depsosit;
 	std::cout << ";created" << std::endl;
 
 	Account::_nbAccounts++;
@@ -132,6 +132,18 @@ void	Account::displayAccountsInfos( void ) {
 	std::cout << "total:" << getTotalAmount() << ";";
 	std::cout << "deposits:" << getNbDeposits() << ";";
 	std::cout << "withdrawals:" << getNbWithdrawals() << std::endl;
+
+	return ;
+}
+
+void	Account::displayStatus( void ) const {
+	
+	_displayTimestamp();
+
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount:" << this->checkAmount() << ";";
+	std::cout << "deposits:" << _nbDeposits << ";";
+	std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
 
 	return ;
 }
