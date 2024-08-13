@@ -6,7 +6,7 @@
 #    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 16:01:55 by hulefevr          #+#    #+#              #
-#    Updated: 2024/08/13 16:02:05 by hulefevr         ###   ########.fr        #
+#    Updated: 2024/08/13 16:44:38 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ CFLAGS	=	-Werror -Wall -Wextra -std=c++98
 
 SRC		=	main.cpp \
 			Fixed.cpp \
+			Point.cpp \
+			bsp.cpp \
 
 
 NAME	=	BSP
