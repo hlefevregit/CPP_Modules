@@ -6,7 +6,7 @@
 /*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:44:52 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 20:47:08 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/08/17 14:45:25 by hugolefevre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 #include "ICharacter.hpp" 
+
+class ICharacter;
 
 class AMateria {
 protected:
@@ -28,7 +30,7 @@ public:
     std::string const & getType() const;
 
     virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
+    virtual void use(ICharacter &target);
 };
 
 #endif

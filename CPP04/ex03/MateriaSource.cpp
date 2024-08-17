@@ -6,7 +6,7 @@
 /*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:54:52 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 20:56:23 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/08/17 14:42:24 by hugolefevre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ MateriaSource::MateriaSource() {
     std::cout << "MateriaSource created." << std::endl;
 }
 
-MateriaSource::MateriaSource(MateriaSource const & other) {
+MateriaSource::MateriaSource(MateriaSource const &other) {
     for (int i = 0; i < 4; i++) {
         if (other._materias[i])
             _materias[i] = other._materias[i]->clone();
@@ -30,7 +30,7 @@ MateriaSource::MateriaSource(MateriaSource const & other) {
     std::cout << "MateriaSource copied." << std::endl;
 }
 
-MateriaSource & MateriaSource::operator=(MateriaSource const & other) {
+MateriaSource &MateriaSource::operator=(MateriaSource const &other) {
     if (this != &other) {
         for (int i = 0; i < 4; i++) {
             if (_materias[i])
