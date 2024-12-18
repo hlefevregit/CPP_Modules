@@ -3,21 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 13:13:30 by hugolefevre       #+#    #+#              #
-#    Updated: 2024/08/16 20:31:49 by hugolefevre      ###   ########.fr        #
+#    Updated: 2024/12/18 12:52:08 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	c++
 
-CFLAGS	=	-Werror -Wall -Wextra -std=c++98 -Wno-shadow
+CFLAGS	=	-Werror -Wall -Wextra -std=c++98 -Wno-shadow -g
 
 SRC		=	main.cpp \
 			Dog.cpp \
 			Cat.cpp \
 			Animal.cpp \
+			AAnimal.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp \
 			Brain.cpp \

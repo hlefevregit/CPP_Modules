@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:52:54 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 20:53:20 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/12/18 12:02:53 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 class Character : public ICharacter {
 private:
     std::string _name;
-    AMateria* _inventory[4];
+    AMateria *_inventory[4];
 
 public:
-    Character(std::string const & name);
-    Character(Character const & other);
-    Character & operator=(Character const & other);
+    Character(std::string const &name);
+    Character(Character const &other);
+    Character &operator=(Character const &other);
     virtual ~Character();
 
-    std::string const & getName() const;
-    void equip(AMateria* m);
+    std::string const &getName() const;
+    void equip(AMateria *m);
     void unequip(int idx);
-    void use(int idx, ICharacter& target);
+    void use(int idx, ICharacter &target);
 };
 
 #endif

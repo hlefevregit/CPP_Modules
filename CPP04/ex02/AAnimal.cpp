@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:33:41 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 20:34:24 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/12/18 12:37:29 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : type("Animal") {
+AAnimal::AAnimal() : type("unknown") {
     std::cout << "AAnimal constructor called" << std::endl;
 }
 

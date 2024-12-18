@@ -3,37 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:14:11 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 18:36:57 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/12/18 12:56:48 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Cat.hpp"
-#include "Animal.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
+#include <iostream>
+#include <vector>
 
 int main() {
-    const int numAnimals = 4;
-    Animal* animals[numAnimals];
+    std::cout << "=== Création des animaux ===" << std::endl;
 
-    for (int i = 0; i < numAnimals / 2; ++i) {
+    const int animalCount = 6;
+    AAnimal* animals[animalCount];
+
+    // Initialisation du tableau d'animaux
+    for (int i = 0; i < animalCount / 2; ++i) {
         animals[i] = new Dog();
+        std::cout << "Dog " << i << " created." << std::endl;
     }
-
-    for (int i = numAnimals / 2; i < numAnimals; ++i) {
+    for (int i = animalCount / 2; i < animalCount; ++i) {
         animals[i] = new Cat();
+        std::cout << "Cat " << i << " created." << std::endl;
     }
 
-    for (int i = 0; i < numAnimals; ++i) {
-        animals[i]->makeSound();
+    std::cout << "\n=== Sons des animaux ===" << std::endl;
+    for (int i = 0; i < animalCount; ++i) {
+        if (animals[i]) {
+            animals[i]->makeSound();
+        } else {
+            std::cerr << "Error: Null pointer in animals array at index " << i << std::endl;
+        }
     }
 
-    for (int i = 0; i < numAnimals; ++i) {
-        delete animals[i];
+    std::cout << "\n=== Test de la copie profonde ===" << std::endl;
+    Dog originalDog;
+    if (originalDog.getBrain() == 0) {
+        std::cerr << "Error: Dog's Brain is null!" << std::endl;
+    } else {
+        originalDog.getBrain()->setIdea(0, "Manger un os");
     }
 
+    Dog copiedDog(originalDog); // Test du constructeur par copie
+    if (copiedDog.getBrain() == 0) {
+        std::cerr << "Error: Copied Dog's Brain is null!" << std::endl;
+    } else {
+        std::cout << "Copied Dog's Brain Idea 0: " << copiedDog.getBrain()->getIdea(0) << std::endl;
+    }
+
+    std::cout << "\n=== Destruction des animaux ===" << std::endl;
+
+    // Destruction du tableau d'animaux
+    for (int i = 0; i < animalCount; ++i) {
+        if (animals[i]) {
+            delete animals[i];
+            animals[i] = 0; // Évite les accès à des pointeurs pendants
+        } else {
+            std::cerr << "Error: Null pointer in animals array at index " << i << " during destruction." << std::endl;
+        }
+    }
+
+    std::cout << "=== Fin du programme ===" << std::endl;
     return 0;
 }

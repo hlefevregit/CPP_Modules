@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:49:46 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 20:59:36 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/12/18 12:13:00 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:44:27 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 18:21:04 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/12/18 12:34:38 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 private:
     Brain   *brain;
 public:
@@ -26,7 +26,7 @@ public:
     Cat(const Cat &other);
     Cat &operator=(const Cat &other);
 
-    void makeSound() const;
+    virtual void makeSound() const;
 };
 
 #endif

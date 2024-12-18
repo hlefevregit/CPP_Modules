@@ -3,32 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:26:11 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 18:24:16 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2024/12/18 12:43:04 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal(), brain(new Brain()) {
+Dog::Dog() : AAnimal() {
     std::cout << "Dog constructed" << std::endl;
     type = "Dog";
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog &other) : AAnimal(other) {
+    if (other.brain)
+        this->brain = new Brain(*other.brain);
+    else
+        this->brain = 0;
     std::cout << "Dog copy constructed" << std::endl;
-    brain = new Brain(*other.brain);
 }
 
 Dog &Dog::operator=(const Dog &other) {
-    std::cout << "Dog copy assignment operator called" << std::endl;
     if (this != &other) {
-        Animal::operator=(other);
-        delete brain;
-        brain = new Brain(*other.brain);
+        AAnimal::operator=(other);
+        delete this->brain;
+        if (other.brain)
+            this->brain = new Brain(*other.brain);
+        else
+            this->brain = 0;
     }
+    std::cout << "Dog copy assignment operator called" << std::endl;
     return *this;
 }
 
@@ -39,4 +45,8 @@ Dog::~Dog() {
 
 void Dog::makeSound() const {
     std::cout << "Woof" << std::endl;
+}
+
+Brain *Dog::getBrain() const {
+    return brain;
 }
