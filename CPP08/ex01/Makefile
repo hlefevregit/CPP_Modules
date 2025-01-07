@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/16 13:13:30 by hugolefevre       #+#    #+#              #
-#    Updated: 2025/01/07 14:00:03 by hulefevr         ###   ########.fr        #
+#    Created: 2025/01/07 19:05:42 by hulefevr          #+#    #+#              #
+#    Updated: 2025/01/07 19:10:32 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,13 @@ CC		=	c++
 CFLAGS	=	-Werror -Wall -Wextra -std=c++98 -Wno-shadow
 
 SRC		=	main.cpp \
-			Dog.cpp \
-			Cat.cpp \
-			Animal.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp \
-			
+			Span.cpp \
 
-NAME	=	Polymorphysm
+NAME	=	Span
 
-%.o:%.cpp
+OBJ		=	$(SRC:.cpp=.o)
+
+%.o:%.cpp Array.hpp
 	@echo "📦 $(GREEN)Compilation de $<...$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 

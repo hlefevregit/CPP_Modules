@@ -6,7 +6,7 @@
 #    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 15:39:36 by hulefevr          #+#    #+#              #
-#    Updated: 2025/01/02 15:45:06 by hulefevr         ###   ########.fr        #
+#    Updated: 2025/01/07 19:16:23 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,33 @@ SRC		=	main.cpp \
 
 NAME	=	Base
 
-$(NAME)	:
-			$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+OBJ		=   $(SRC:.cpp=.o)
+
+%.o:%.cpp
+	@echo "📦 $(GREEN)Compilation de $<...$(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME)	: $(OBJ)
+	@echo "🔧 $(GREEN)Compilation de $(NAME)...$(RESET)"
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	@echo "✅ $(GREEN)Compilation terminée avec succès !$(RESET)"
 
 all		:	$(NAME)
 
 clean	:
-			rm -rdf $(OBJ)
+	@echo "🧹 $(RED)Suppression des fichiers objets...$(RESET)"
+	@rm -rf $(OBJ)
 
 fclean	:	clean
-			rm -rdf $(NAME)
+	@echo "🗑️ $(RED) Suppression de l'exécutable...$(RESET)"
+	@rm -rf $(NAME)
 
 re		:	fclean all
 
 .PHONY	:	all clean fclean re
+
+#	COLOR SETTING	#############################################################
+RESET   	=	\033[0m
+GREEN     	=	\033[0;32m
+RED			=	\033[0;31m
+#################################################################################

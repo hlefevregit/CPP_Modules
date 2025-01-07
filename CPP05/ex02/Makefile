@@ -6,7 +6,7 @@
 #    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 13:57:25 by hulefevr          #+#    #+#              #
-#    Updated: 2024/12/23 14:27:30 by hulefevr         ###   ########.fr        #
+#    Updated: 2025/01/07 13:59:44 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,17 +25,31 @@ SRC		=	main.cpp \
 
 NAME	=	moreForm
 
-$(NAME)	:
-			$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+%.o:%.cpp
+	@echo "📦 $(GREEN)Compilation de $<...$(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME)	: $(OBJ)
+	@echo "🔧 $(GREEN)Compilation de $(NAME)...$(RESET)"
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	@echo "✅ $(GREEN)Compilation terminée avec succès !$(RESET)"
 
 all		:	$(NAME)
 
 clean	:
-			rm -rdf $(OBJ)
+	@echo "🧹 $(RED)Suppression des fichiers objets...$(RESET)"
+	@rm -rf $(OBJ)
 
 fclean	:	clean
-			rm -rdf $(NAME)
+	@echo "🗑️ $(RED) Suppression de l'exécutable...$(RESET)"
+	@rm -rf $(NAME)
 
 re		:	fclean all
 
 .PHONY	:	all clean fclean re
+
+#	COLOR SETTING	#############################################################
+RESET   	=	\033[0m
+GREEN     	=	\033[0;32m
+RED			=	\033[0;31m
+#################################################################################
