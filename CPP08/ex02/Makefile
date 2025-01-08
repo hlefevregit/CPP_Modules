@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/07 19:05:42 by hulefevr          #+#    #+#              #
-#    Updated: 2025/01/08 14:05:35 by hulefevr         ###   ########.fr        #
+#    Created: 2025/01/08 14:04:51 by hulefevr          #+#    #+#              #
+#    Updated: 2025/01/08 14:33:15 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,8 @@ CC		=	c++
 CFLAGS	=	-Werror -Wall -Wextra -std=c++98 -Wno-shadow
 
 SRC		=	main.cpp \
-			Span.cpp \
 
-NAME	=	Span
+NAME	=	MutantStack
 
 OBJ		=	$(SRC:.cpp=.o)
 
