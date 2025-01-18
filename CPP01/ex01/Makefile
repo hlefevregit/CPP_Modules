@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/12 13:42:37 by hulefevr          #+#    #+#              #
-#    Updated: 2024/08/12 14:26:51 by hulefevr         ###   ########.fr        #
+#    Updated: 2025/01/18 13:07:59 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC		=	zombieHorde.cpp \
 
 #OBJ		=	$(SRC:.cpp=.o)
 
-NAME	=	Moar brainz!
+NAME	=	MoarBrainz
 
 $(NAME)	:	#$(OBJ)
 			$(CC) $(CFLAGS) $(SRC) -o $(NAME)

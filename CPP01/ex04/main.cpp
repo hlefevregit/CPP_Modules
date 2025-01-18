@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 16:01:35 by hulefevr          #+#    #+#             */
-/*   Updated: 2024/08/12 16:35:47 by hulefevr         ###   ########.fr       */
+/*   Updated: 2025/01/18 14:11:53 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	replaceInFile(std::string filename, std::string s1, std::string s2)
 {
-	std::ifstream inFile(filename);
+	std::ifstream inFile(filename.c_str());
 	if (!inFile.is_open()) {
 		std::cerr << "Error: Could not open file " << filename << std::endl;
         return;
@@ -39,8 +39,8 @@ void	replaceInFile(std::string filename, std::string s1, std::string s2)
 		content.insert(pos, s2);
 		pos += s2.length();
 	}
-
-	std::ofstream outFile(filename +  ".replace");
+	std::string out = filename + ".replace";
+	std::ofstream outFile(out.c_str());
 	if (!outFile.is_open()) {
         std::cerr << "Error: Could not create output file " << filename << ".replace" << std::endl;
         return;

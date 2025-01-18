@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/09 13:39:45 by hugolefevre       #+#    #+#              #
-#    Updated: 2024/08/09 13:39:54 by hugolefevre      ###   ########.fr        #
+#    Updated: 2025/01/18 10:37:23 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC		=	c++
 
 CFLAGS	=	-Werror -Wall -Wextra -std=c++98
 
-SRC		=	megaphone.cpp
+SRC		=	Megaphone.cpp
 
 #OBJ		=	$(SRC:.cpp=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:57:20 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/12 16:34:22 by hulefevr         ###   ########.fr       */
+/*   Updated: 2025/01/18 10:39:48 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,13 @@ void	PhoneBook::searchContact() const
     }
 
 	int index;
+    std::cout << "Enter the index of the contact you want to display: ";
 	while (!(std::cin >> index) || index < 1 || index > _contactCount || index > 8) {
-        // Clear the error flag on cin
         std::cin.clear();
-        // Ignore the rest of the input (up to 1000 characters or until newline)
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid index! Please enter a number between 1 and " << std::min(_contactCount, 8) << ": ";
     }
     
-    // Clear the input buffer before the next prompt
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	_contacts[index - 1].displayContactDetails();
 
