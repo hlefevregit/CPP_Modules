@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:42:37 by hugolefevre       #+#    #+#              #
-#    Updated: 2025/01/07 14:00:19 by hulefevr         ###   ########.fr        #
+#    Updated: 2025/01/18 14:40:32 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRC		=	main.cpp \
 			MateriaSource.cpp \
 
 NAME	=	Interface
+
+OBJ		=   $(SRC:.cpp=.o)
 
 %.o:%.cpp
 	@echo "📦 $(GREEN)Compilation de $<...$(RESET)"

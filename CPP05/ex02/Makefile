@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 13:57:25 by hulefevr          #+#    #+#              #
-#    Updated: 2025/01/07 13:59:44 by hulefevr         ###   ########.fr        #
+#    Updated: 2025/01/18 14:38:57 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRC		=	main.cpp \
 			
 
 NAME	=	moreForm
+
+OBJ		=   $(SRC:.cpp=.o)
 
 %.o:%.cpp
 	@echo "📦 $(GREEN)Compilation de $<...$(RESET)"

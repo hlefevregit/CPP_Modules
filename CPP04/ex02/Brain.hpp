@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 18:16:37 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 18:17:56 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2025/01/18 14:48:50 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class Brain {
 private:
-    std::string ideas[100];
-
+    std::string *ideas;
+    size_t size;
 public:
     Brain();
     Brain(const Brain &other);

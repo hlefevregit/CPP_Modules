@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hulefevr <hulefevr@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 13:13:30 by hugolefevre       #+#    #+#              #
-#    Updated: 2025/01/07 14:00:03 by hulefevr         ###   ########.fr        #
+#    Updated: 2025/01/18 14:39:02 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRC		=	main.cpp \
 			
 
 NAME	=	Polymorphysm
+
+OBJ		=   $(SRC:.cpp=.o)
 
 %.o:%.cpp
 	@echo "📦 $(GREEN)Compilation de $<...$(RESET)"
