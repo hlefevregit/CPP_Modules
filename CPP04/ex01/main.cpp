@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:14:11 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 18:36:57 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2025/01/20 14:30:08 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,17 @@ int main() {
         animals[i] = new Cat();
     }
 
+    std::cout << std::endl;
+    std::cout << "---------------------------" << std::endl;
+    std::cout << std::endl;
+
     for (int i = 0; i < numAnimals; ++i) {
         animals[i]->makeSound();
     }
+
+    std::cout << std::endl;
+    std::cout << "---------------------------" << std::endl;
+    std::cout << std::endl;
 
     for (int i = 0; i < numAnimals; ++i) {
         delete animals[i];

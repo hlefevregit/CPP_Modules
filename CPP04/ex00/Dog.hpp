@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugolefevre <hugolefevre@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:15:43 by hugolefevre       #+#    #+#             */
-/*   Updated: 2024/08/16 17:51:27 by hugolefevre      ###   ########.fr       */
+/*   Updated: 2025/01/20 13:45:18 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class Dog : public Animal {
 public:
-    Dog(); // Constructeur par défaut
-    virtual ~Dog(); // Destructeur
-    Dog(const Dog &other); // Constructeur de recopie
-    Dog &operator=(const Dog &other); // Opérateur d'affectation
+    Dog();
+    virtual ~Dog();
+    Dog(const Dog &other);
+    Dog &operator=(const Dog &other);
 
-    void makeSound() const; // Redéfinition de makeSound()
+    void makeSound() const;
 };
 
 #endif

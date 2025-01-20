@@ -6,7 +6,7 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 18:16:37 by hugolefevre       #+#    #+#             */
-/*   Updated: 2025/01/18 14:48:50 by hulefevr         ###   ########.fr       */
+/*   Updated: 2025/01/20 14:43:37 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 
 class Brain {
 private:
-    std::string *ideas;
-    size_t size;
+    std::string ideas[100];
 public:
     Brain();
     Brain(const Brain &other);

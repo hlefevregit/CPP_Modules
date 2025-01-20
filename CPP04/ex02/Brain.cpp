@@ -6,43 +6,34 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 18:18:05 by hugolefevre       #+#    #+#             */
-/*   Updated: 2025/01/18 14:56:29 by hulefevr         ###   ########.fr       */
+/*   Updated: 2025/01/20 14:44:43 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain() : ideas(new std::string[100]), size(100) {
+Brain::Brain() {
     std::cout << "Brain constructed" << std::endl;
 }
 
-Brain::Brain(const Brain &other) : ideas(0), size(other.size) {
-    if (other.ideas) {
-        ideas = new std::string[size];
-        for (size_t i = 0; i < size; ++i) {
-            ideas[i] = other.ideas[i];
-        } 
-    } else {
-        std::cerr << "Error: Null pointer in Brain copy constructor" << std::endl;
+Brain::Brain(const Brain &other) {
+    for (int i = 0; i < 100; i++) {
+        ideas[i] = other.ideas[i];
     }
     std::cout << "Brain copy constructed" << std::endl;
 }
 
 Brain &Brain::operator=(const Brain &other) {
-    std::cout << "Brain copy assignment operator called" << std::endl;
     if (this != &other) {
-        delete[] ideas;
-        size = other.size;
-        ideas = new std::string[size];
-        for (size_t i = 0; i < size; ++i) {
+        for (int i = 0; i < 100; i++) {
             ideas[i] = other.ideas[i];
         }
     }
+    std::cout << "Brain copy assignment operator called" << std::endl;
     return *this;
 }
 
 Brain::~Brain() {
-    delete[] ideas;
     std::cout << "Brain destructed" << std::endl;
 }
 
